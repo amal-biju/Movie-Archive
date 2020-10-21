@@ -1,5 +1,5 @@
 # Movie-Archive
-### This allows you to get information about any movie!
+### This application gives you information about any movie!
 
 ## Main Page:
 
