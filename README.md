@@ -1,2 +1,2 @@
 # Movie-Archive
-## This allows you to get information about any movie!
+### This allows you to get information about any movie!
