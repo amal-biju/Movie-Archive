@@ -1,6 +1,11 @@
 window.addEventListener("load",function(){
     const form = document.querySelector('form');
     form.addEventListener("submit",handleChange)
+    
+    const movies = localStorage.getItem("movieList");
+    if(movies)
+        displayMovies(JSON.parse(movies).Search)
+    
 })
 
 let timeOut;
@@ -27,6 +32,7 @@ function getMovies(){
     xhr.onload = function(){
         var res = JSON.parse(this.response)
         console.log(res);
+        localStorage.setItem("movieList",this.response)
         const {Search,totalResults} = res;
 
         displayMovies(Search,totalResults)

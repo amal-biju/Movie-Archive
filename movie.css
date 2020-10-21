@@ -5,6 +5,10 @@ body{
     padding: 0;
     box-sizing: border-box;
 }
+h1,h2,h3,div {
+    margin: 0;
+    padding: 0;
+}
 nav {
     padding: 10px;
     background-color: rgba(17, 17, 17, 0.76);
@@ -18,4 +22,43 @@ nav p {
 .flex {
     display: flex;
     justify-content: flex-start;
+}
+span {
+    color: aliceblue;
+}
+#container,#imageWrapper,#detailsWrapper {
+    padding: 10px;
+}
+#detailsWrapper > h1 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+#detailsWrapper > div {
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+#detailsWrapper > .flex > h2 {
+    width: 33%
+}
+#detailsWrapper > .flex > .flex {
+    width: 33%
+}
+#detailsWrapper img {
+    margin-right: 10px;
+}
+section {
+    margin-top: 30px;
+}
+button {
+    background-color: #111;
+    color: yellow;
+    border: none;
+    padding: 15px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+section > button:nth-child() {
+    background-color: rgb(255, 208, 0);
+    color: black;
+    font-weight: 1000;
 }

@@ -66,6 +66,7 @@ input::placeholder{
 
 }
 button {
+    margin-bottom: 20px;
     padding: 10px;
     font-size: 15px;
     color: white;
