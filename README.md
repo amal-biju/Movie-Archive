@@ -11,22 +11,22 @@
 ## Main Page:
 - Search for any movie in the input box and press Enter.
 
-[![Main Page](./images/main.png)
+![Main Page](./images/main.png)
 
 ## Listing Page:
 - Shows you a list of movies according to our search query.
 - Click on "More Info" to see more info about any movie
 
-[![Listing Page](./images/listing.png)
+![Listing Page](./images/listing.png)
 
 ## Movie Details Page:
 - Shows more information about the selected movie.
 - Click "View IMDb" to see it's IMDb page.
 - Click "Back to Search" to return to Listing Page.
 
-[![Movie Details Page](./images/details.png)
+![Movie Details Page](./images/details.png)
 
 ## Sneak Peak:
 
-[![GIF](./images/movie-archive.gif)
+![GIF](./images/movie-archive.gif)
 
