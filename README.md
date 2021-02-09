@@ -8,6 +8,13 @@
 <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"></code>
 <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"></code>
 
+## API:
+
+### The Open Movie Database
+
+The [OMDb API](http://www.omdbapi.com/) is a RESTful web service to obtain movie information, all content and images on the site are contributed and maintained by our users.
+
+
 ## Main Page:
 - Search for any movie in the input box and press Enter.
 
@@ -27,7 +34,6 @@
 ![Movie Details Page](./images/details.png)
 
 ## Sneak Peak:
-
 ![GIF](./images/movie-archive.gif)
 
 ## Acknowledgments:
