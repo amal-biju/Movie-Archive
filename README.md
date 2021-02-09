@@ -30,3 +30,6 @@
 
 ![GIF](./images/movie-archive.gif)
 
+## Acknowledgments:
+I take full responsiblity for every single line of code.
+
