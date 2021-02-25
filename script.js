@@ -1,76 +1,69 @@
-window.addEventListener("load",function(){
-    const form = document.querySelector('form');
-    form.addEventListener("submit",handleChange)
-    
-    const movies = localStorage.getItem("movieList");
-    if(movies)
-        displayMovies(JSON.parse(movies).Search)
-    
-})
+window.addEventListener("load", function () {
+   const form = document.querySelector("form");
+   form.addEventListener("submit", handleChange);
+
+   const movies = localStorage.getItem("movieList");
+   if (movies) displayMovies(JSON.parse(movies).Search);
+});
 
 let timeOut;
 
-function handleChange(){
-    event.preventDefault()
-    clearTimeout(timeOut)
-    const input = document.querySelector('input').value;
-    
-    if(input){
-        // console.log(input);
-        timeOut = setTimeout(getMovies,500)
-    }
+function handleChange() {
+   event.preventDefault();
+   clearTimeout(timeOut);
+   const input = document.querySelector("input").value;
+
+   if (input) {
+      timeOut = setTimeout(getMovies, 500);
+   }
 }
 
-function getMovies(){
-    const input = document.querySelector('input').value;
-    
-    const xhr = new XMLHttpRequest()
+function getMovies() {
+   const input = document.querySelector("input").value;
 
-    xhr.open("GET",`http://www.omdbapi.com/?apikey=e49831aa&s=${input}`)
-    xhr.send();
+   const xhr = new XMLHttpRequest();
 
-    xhr.onload = function(){
-        var res = JSON.parse(this.response)
-        console.log(res);
-        localStorage.setItem("movieList",this.response)
-        const {Search,totalResults} = res;
+   xhr.open("GET", `https://www.omdbapi.com/?apikey=e49831aa&s=${input}`);
+   xhr.send();
 
-        displayMovies(Search,totalResults)
-    }
+   xhr.onload = function () {
+      var res = JSON.parse(this.response);
+      localStorage.setItem("movieList", this.response);
+      const { Search, totalResults } = res;
+
+      displayMovies(Search, totalResults);
+   };
 }
 
-function displayMovies(movies,totalNumber){
+function displayMovies(movies, totalNumber) {
+   const container = document.getElementById("container");
+   container.innerHTML = "";
 
-    const container = document.getElementById('container')
-    container.innerHTML = ""
+   movies.forEach((movie) => {
+      const card = document.createElement("div");
+      card.setAttribute("class", "card");
 
-    movies.forEach(movie => {
-        const card = document.createElement('div');
-        card.setAttribute("class","card")
+      const image = document.createElement("img");
+      image.src = movie.Poster;
 
-        const image = document.createElement('img');
-        image.src = movie.Poster
+      const title = document.createElement("h2");
+      title.setAttribute("class", "fixed-height");
+      title.innerText = movie.Title;
 
-        const title = document.createElement('h2');
-        title.setAttribute("class","fixed-height")
-        title.innerText = movie.Title
+      const year = document.createElement("h3");
+      year.innerText = movie.Year;
 
-        const year = document.createElement('h3');
-        year.innerText = movie.Year
+      const button = document.createElement("button");
+      button.setAttribute("name", movie.imdbID);
+      button.innerHTML = "More Info";
+      button.addEventListener("click", handelClick);
 
-        const button = document.createElement('button');
-        button.setAttribute("name",movie.imdbID)
-        button.innerHTML = "More Info"
-        button.addEventListener("click",handelClick)
-
-        card.append(image,title,year,button)
-        container.append(card)
-
-    });
-
+      card.append(image, title, year, button);
+      container.append(card);
+   });
 }
 
-function handelClick(event){
-    console.log(event.target.name);
-    location.assign(`movie.html?id=${event.target.name}`)
+function handelClick(event) {
+   console.log(event.target.name);
+   location.assign(`movie.html?id=${event.target.name}`);
 }
